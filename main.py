@@ -43,7 +43,7 @@ def save_in_db(response: requests, main_links: dict) -> None:
     except AttributeError:
         # Sometime this site doesn't allow to get data and raisin 403 forbigdden error.
         # Because of this issue I decided to create file and write all errored urls.
-        with open('error_urls.txt', 'wa') as file:
+        with open('error_urls.txt', 'a') as file:
             file.write(f'{response.url}===={response.status_code}\n')
     else:
         multiple_data = []
