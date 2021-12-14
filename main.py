@@ -18,6 +18,11 @@ mydb = mysql.connector.connect(
 )
 my_cursor = mydb.cursor()
 
+
+my_cursor.execute(
+    "DROP TABLE IF EXISTS disease "
+)
+
 my_cursor.execute(
     "CREATE TABLE disease "
     "(pk INT NOT NULL AUTO_INCREMENT PRIMARY KEY, "
